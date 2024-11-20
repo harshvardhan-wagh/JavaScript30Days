@@ -64,6 +64,7 @@ function playSound(e){
 
   const audio =  document.querySelector(`audio[data-key="${e.keyCode}"]`)
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+  
   if(!audio) return;
   audio.currentTime=0;
   audio.play();
@@ -81,11 +82,13 @@ function removeTransition(e){
   
 }
 
+// getting all element which have class keys
 const keys = document.querySelectorAll('.key');
 
+// Now each key in node list will look for where transition is ending which is defined in css
 keys.forEach(key => key.addEventListener('transitionend' , removeTransition))
 
-
+// now listening every key down 
 window.addEventListener('keydown',playSound);
 
 </script>

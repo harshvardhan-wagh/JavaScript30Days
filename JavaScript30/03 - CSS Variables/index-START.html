@@ -67,6 +67,7 @@
 
     function handleUpdate(){
       const suffix = this.dataset.sizing  || '';
+      //Main part because set name and set value is same so it is easier to set 
       document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
       
     }
